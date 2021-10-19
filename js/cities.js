@@ -61,7 +61,6 @@ function print_city(city_id, city_index) {
     option_str.innerHTML = "Select City";
     select.appendChild(option_str);
     var city_arr = state_city[city_index].split("|");
-    console.log(typeof(city_arr));
     for (var i = 1; i < city_arr.length; i++) {
         option_str = document.createElement("option");
         option_str.value = city_arr[i];
