@@ -11,7 +11,6 @@ function validateName() {
         return true;
     } catch (e) {
         setTextValue('.name-error', e);
-        throw e;
     }
 }
 
