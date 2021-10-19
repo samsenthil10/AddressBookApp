@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap" rel="stylesheet">
     <link href="../css/add_contact_form.css " rel="stylesheet">
     <script src="../js/cities.js"></script>
+    <script src="../js/utilities.js"></script>
+    <script src="../js/Contact.js"></script>
+    <script src="../js/add_contact_form.js"></script>
     <title>Address Book form</title>
 </head>
 
@@ -43,6 +46,7 @@
             <div class="row-content">
                 <label class="label text" for="address">Address</label>
                 <textarea class="input" id="address" name="Address" required></textarea>
+                <error-output class="address-error" for="text"></error-output>
             </div>
             <div class="row-content-exp">
                 <div class="oneRow-content">
@@ -59,6 +63,7 @@
                 <div class="zip-container">
                     <label class="label text" for="zip">Zip</label>
                     <input class="input" type="text" name="Zip" id="zip" required>
+                    <error-output class="zipcode-error" for="text"></error-output>
                 </div>
             </div>
 
