@@ -17,3 +17,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     email.addEventListener('input', validateEmail);
 
 });
+
+function save() {
+
+}
+
+function resetForm() {
+
+}
