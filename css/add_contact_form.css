@@ -196,49 +196,17 @@ error-output {
     pointer-events: all !important;
 }
 
-@media only screen and (max-width: 700px) {
-    select {
-        font-size: 10px;
-        margin-right: 0px;
+@media only screen and (width: 812px) {
+    .form-head-text {
+        margin-left: 0%;
+        padding-left: 8px;
+    }
+    .form-cancel-img {
+        padding-block: 0px;
+        margin-left: 10px;
+        width: 35px;
         height: 35px;
-    }
-    input {
-        height: 35px;
-    }
-    .form {
-        padding: 15px;
-    }
-    .text {
-        font-size: 10px;
-        padding: 0;
-        align-items: baseline;
-    }
-    .submit-reset {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    select {
-        margin-right: 0px;
-        height: 35px;
-    }
-    input {
-        height: 35px;
-    }
-    .text {
-        font-size: 10px;
-        align-items: baseline;
-    }
-    .submit-reset-container {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-top: 40px;
     }
 }
