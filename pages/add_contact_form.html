@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap" rel="stylesheet">
     <link href="../css/add_contact_form.css " rel="stylesheet">
     <script src="../js/cities.js"></script>
+    <script src="../js/site_properties.js"></script>
     <script src="../js/utilities.js"></script>
     <script src="../js/Contact.js"></script>
     <script src="../js/add_contact_form.js"></script>
@@ -26,7 +27,7 @@
     </header>
 
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
             <div class="form-head">
                 <div class="form-head-text">Person Address Form</div>
                 <a href=""><img src="../assets/images/cancel.png" class="form-cancel-img"></a>
@@ -51,11 +52,11 @@
             <div class="row-content-exp">
                 <div class="oneRow-content">
                     <label class="label text" for="state">State</label>
-                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control select-input" required></select>
+                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control select-input getState" required></select>
                 </div>
                 <div class="oneRow-content">
                     <label class="label text" for="city">City</label>
-                    <select id="state" class="form-control select-input" required></select>
+                    <select id="state" class="form-control select-input getCity" required></select>
                     <script language="javascript">
                         print_state("sts");
                     </script>
