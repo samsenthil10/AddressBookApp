@@ -1,58 +1,100 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
+    margin: 0px;
     height: 100%;
     background-color: #f7f7f7;
+    text-transform: capitalize;
 }
 
 .header {
     padding: 15px 0;
-    background-color: white;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    border: 0px solid green;
+    background-color: #ffffff;
 }
 
-.header-content {
+.header-content-page {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: 0px solid green;
 }
 
 .logo-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 0px solid green;
     width: 80%;
 }
 
-.logo-content a {
-    text-decoration: none;
-    display: flex;
+.logo-content-img {
+    width: 40px;
 }
 
-.logo-content img {
-    border: 0px solid #42515f;
-}
-
-.address-text {
-    text-align: left;
-    font: normal normal bold 20px/25px Montserrat;
-    font-family: 'Montserrat', sans-serif;
+.text-address {
+    font: normal;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
     letter-spacing: 0px;
     color: #008CFF;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    padding-left: 12px;
 }
 
-.address-book-text {
+.text-book {
     color: #42515f;
 }
 
-* {
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px);
+    background-color: #f7f7f7;
+    padding: 30px 0 10px;
     box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+}
+
+.person-detail-text {
+    font: normal normal normal bold 24px/25px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+    display: flex;
+}
+
+.person-count {
+    background-color: #008CFF;
+    color: white;
+    border-radius: 45%;
+    font-size: 16px;
+    width: 26px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.add-button {
+    font: normal normal normal 22px/29px Roboto;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    background: #008CFF 0% 0% no-repeat padding-box;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 18px;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
 }
