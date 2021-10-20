@@ -156,4 +156,10 @@ th:first-child {
 
 .actions img {
     margin-right: 15px;
+    cursor: pointer;
+}
+
+.actions img:hover {
+    transform: scale(1.2);
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
 }
