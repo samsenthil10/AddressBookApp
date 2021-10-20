@@ -78,4 +78,14 @@ function createNewContactID() {
 
 function resetForm() {
 
+    setValue('#name', '');
+    setValue('#address', '');
+    setValue('#zip', '');
+    setValue('#phone', '');
+    setValue('#email', '');
+    setElementValues('error-output', '');
+    setValue('#sts', '');
+    print_city('state', 0);
+    var pointer = document.getElementById("name");
+    pointer.scrollIntoView({ block: 'end', behavior: 'smooth' });
 }
