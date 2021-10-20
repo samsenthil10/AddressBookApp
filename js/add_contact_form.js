@@ -92,7 +92,7 @@ function resetForm() {
 }
 
 function checkForUpdate() {
-    contactObject = new Contact();
+
     const addressBookJSON = localStorage.getItem('EditContactList');
     isUpdate = addressBookJSON ? true : false;
     if (!isUpdate) return;
