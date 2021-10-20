@@ -1,3 +1,5 @@
+var flag = 0;
+
 function validateName() {
 
     const name = document.querySelector('#name');
@@ -11,6 +13,7 @@ function validateName() {
         return true;
     } catch (e) {
         setTextValue('.name-error', e);
+        document.querySelector('#submitButton').disabled = true;
     }
 }
 
@@ -27,6 +30,7 @@ function validatePhone() {
         return true;
     } catch (e) {
         setTextValue('.phone-error', e);
+        document.querySelector('#submitButton').disabled = true;
     }
 }
 
@@ -43,6 +47,7 @@ function validateAddress() {
         return true;
     } catch (e) {
         setTextValue('.address-error', e);
+        document.querySelector('#submitButton').disabled = true;
     }
 }
 
@@ -56,9 +61,11 @@ function validateZipCode() {
     try {
         checkZipCode(zip.value);
         setTextValue('.zipcode-error', '');
+        document.querySelector('#submitButton').disabled = false;
         return true;
     } catch (e) {
         setTextValue('.zipcode-error', e);
+        document.querySelector('#submitButton').disabled = true;
     }
 }
 
