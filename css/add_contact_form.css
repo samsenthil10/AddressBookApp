@@ -137,6 +137,12 @@ body {
     height: 40px;
 }
 
+.label+.input,
+.label+.select-input,
+.label+.row-input {
+    margin-top: 8px;
+}
+
 .select-input {
     width: 100%;
     padding: 6px;
@@ -174,7 +180,7 @@ error-output {
     color: #42515F;
     border-radius: 5px;
     font-weight: 400;
-    min-width: 140px;
+    width: 150px;
     padding: 7px 7px;
     border: 1px solid #969696;
     background: #E2E2E2 0% 0% no-repeat padding-box;
@@ -183,4 +189,56 @@ error-output {
 
 .submitButton {
     margin-right: 35px;
+}
+
+.submitButton:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+@media only screen and (max-width: 700px) {
+    select {
+        font-size: 10px;
+        margin-right: 0px;
+        height: 35px;
+    }
+    input {
+        height: 35px;
+    }
+    .form {
+        padding: 15px;
+    }
+    .text {
+        font-size: 10px;
+        padding: 0;
+        align-items: baseline;
+    }
+    .submit-reset {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    select {
+        margin-right: 0px;
+        height: 35px;
+    }
+    input {
+        height: 35px;
+    }
+    .text {
+        font-size: 10px;
+        align-items: baseline;
+    }
+    .submit-reset-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
 }
