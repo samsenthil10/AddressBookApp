@@ -3,7 +3,7 @@ let contactObject = {};
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
-    print_state("sts");
+    document.querySelector('#submitButton').disabled = true;
     const name = document.querySelector('#name');
     name.addEventListener('input', validateName);
 
@@ -79,7 +79,7 @@ function resetForm() {
     setValue('#phone', '');
     setElementValues('error-output', '');
     setValue('#sts', '');
-    print_city('state', 0);
+    populateCityOptions('state', 0);
     var pointer = document.getElementById("name");
     pointer.scrollIntoView({ block: 'end', behavior: 'smooth' });
 }
