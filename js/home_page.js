@@ -75,3 +75,10 @@ const remove = (node) => {
         createInnerHtml();
     }
 }
+
+const update = (node) => {
+    let addressBookData = AddressBookList.find(contact => contact.id == node.id);
+    if (!addressBookData) return;
+    localStorage.setItem('EditContactList', JSON.stringify(addressBookData));
+    window.location.replace(site_properties.addContact);
+}

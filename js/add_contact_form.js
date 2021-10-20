@@ -15,6 +15,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const zipcode = document.querySelector('#zip');
     zipcode.addEventListener('input', validateZipCode);
+
+    checkForUpdate();
 });
 
 function save(event) {
@@ -26,22 +28,27 @@ function save(event) {
     if (site_properties.useLocalStorage.match("true")) {
         createAndUpdateStorage();
         resetForm();
+        window.location.replace(site_properties.homepage);
     }
 }
 
 function setContactObject() {
-    contactObject = new Contact();
+
     try {
         if (!isUpdate && site_properties.useLocalStorage.match("true")) {
             contactObject.id = createNewContactID();
         }
-        contactObject.fullName = getInputValueId('#name');
-        contactObject.phoneNumber = getInputValueId('#phone');
-        contactObject.address = getInputValueId('#address');
-        contactObject.city = getInputValueId('.getCity');
-        contactObject.state = getInputValueId('.getState');
-        contactObject.zip = getInputValueId('#zip');
-        alert(contactObject);
+        if (checkName(getInputValueId('#name')))
+            contactObject._fullName = getInputValueId('#name');
+        if (checkPhone(getInputValueId('#phone')))
+            contactObject._phoneNumber = getInputValueId('#phone');
+        if (checkAddress(getInputValueId('#address')))
+            contactObject._address = getInputValueId('#address');
+        contactObject._city = getInputValueId('.getCity');
+        contactObject._state = getInputValueId('.getState');
+        if (checkZipCode(getInputValueId('#zip')))
+            contactObject._zip = getInputValueId('#zip');
+        alert("Saved!");
     } catch (e) {
         throw e;
     }
@@ -82,4 +89,24 @@ function resetForm() {
     populateCityOptions('state', 0);
     var pointer = document.getElementById("name");
     pointer.scrollIntoView({ block: 'end', behavior: 'smooth' });
+}
+
+function checkForUpdate() {
+    contactObject = new Contact();
+    const addressBookJSON = localStorage.getItem('EditContactList');
+    isUpdate = addressBookJSON ? true : false;
+    if (!isUpdate) return;
+    contactObject = JSON.parse(addressBookJSON);
+    setForm();
+    localStorage.removeItem('EditContactList');
+}
+
+function setForm() {
+    setValue('#name', contactObject._fullName);
+    setValue('#address', contactObject._address);
+    setValue('#zip', contactObject._zip);
+    setValue('#phone', contactObject._phoneNumber);
+    setValue('#sts', contactObject._state);
+    document.querySelector('#sts').onchange();
+    setValue('#state', contactObject._city);
 }
