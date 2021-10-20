@@ -95,9 +95,14 @@ function checkPhone(phone) {
 
 function checkAddress(address) {
     let addressRegex = RegExp('^(\\b[\\w]{3,}\\s*)+$');
-    if (!addressRegex.test(address)) {
-        throw 'Address is incorrect';
-    } else return true;
+    var wordCount = address.split(" ").length;
+    if (wordCount > 1) {
+        if (!addressRegex.test(address)) {
+            throw 'Address is incorrect';
+        } else return true;
+    } else {
+        throw 'Address Should have multiple words';
+    }
 }
 
 function checkZipCode(zip) {
@@ -108,7 +113,7 @@ function checkZipCode(zip) {
 }
 
 function checkEmail(email) {
-    let emailRegex = RegExp('^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$');
+    let emailRegex = RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z]{2,})+(?:\.[a-zA-Z0-9-]+)*$');
     if (!emailRegex.test(email)) {
         throw 'Email is incorrect';
     } else return true;
@@ -117,4 +122,24 @@ function checkEmail(email) {
 const setTextValue = (property, value) => {
     const text_error = document.querySelector(property);
     text_error.textContent = value;
+}
+
+function getInputValueId(id) {
+    return document.querySelector(id).value;
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
+
+const setElementValues = (cls, value) => {
+    const objects = document.getElementsByTagName(cls);
+    for (var object of objects) {
+        object.innerHTML = value;
+    }
+}
+
+const getListFromStorage = (key) => {
+    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
 }
