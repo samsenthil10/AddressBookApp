@@ -27,7 +27,7 @@
     </header>
 
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save(event)">
+        <form class="form" name="contactForm" action="#" onreset="resetForm()" onsubmit="save(event)">
             <div class="form-head">
                 <div class="form-head-text">Person Address Form</div>
                 <a href='../pages/home_page.html'><img src="../assets/images/cancel.png" class="form-cancel-img"></a>
@@ -52,13 +52,13 @@
             <div class="row-content-exp">
                 <div class="oneRow-content">
                     <label class="label text" for="state">State</label>
-                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control select-input getState" required></select>
+                    <select onchange="populateCityOptions('state', this.selectedIndex);" id="sts" name="stt" class="form-control select-input getState" required></select>
                 </div>
                 <div class="oneRow-content">
                     <label class="label text" for="city">City</label>
                     <select id="state" class="form-control select-input getCity" required></select>
                     <script language="javascript">
-                        print_state("sts");
+                        populateStateOptions("sts");
                     </script>
                 </div>
                 <div class="zip-container">
