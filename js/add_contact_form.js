@@ -49,6 +49,7 @@ function setContactObject() {
         contactObject.city = getInputValueId('.getCity');
         contactObject.state = getInputValueId('.getState');
         contactObject.zip = getInputValueId('#zip');
+        contactObject.email = getInputValueId('#email');
         alert(contactObject);
     } catch (e) {
         throw e;
