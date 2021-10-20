@@ -15,10 +15,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const zipcode = document.querySelector('#zip');
     zipcode.addEventListener('input', validateZipCode);
-
-    const email = document.querySelector('#email');
-    email.addEventListener('input', validateEmail);
-
 });
 
 function save(event) {
@@ -45,7 +41,6 @@ function setContactObject() {
         contactObject.city = getInputValueId('.getCity');
         contactObject.state = getInputValueId('.getState');
         contactObject.zip = getInputValueId('#zip');
-        contactObject.email = getInputValueId('#email');
         alert(contactObject);
     } catch (e) {
         throw e;
@@ -82,7 +77,6 @@ function resetForm() {
     setValue('#address', '');
     setValue('#zip', '');
     setValue('#phone', '');
-    setValue('#email', '');
     setElementValues('error-output', '');
     setValue('#sts', '');
     print_city('state', 0);

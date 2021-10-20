@@ -67,21 +67,9 @@ class Contact {
         else throw 'Phone Number Is Incorrect';
     }
 
-    get email() {
-        return this._email;
-    }
-
-    set email(email) {
-        let emailRegex = RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z]{2,})+(?:\.[a-zA-Z0-9-]+)*$');
-        if (emailRegex.test(email))
-            this._email = email;
-        else throw 'Email Is Incorrect';
-    }
-
-
     toString() {
         return "Full Name = " + this._fullName + ", Address = " + this._address +
             ", City = " + this._city + ", State = " + this._state +
-            ", Zip = " + this._zip + ", Phone Number = " + this._phoneNumber + ", Email = " + this._email;
+            ", Zip = " + this._zip + ", Phone Number = " + this._phoneNumber;
     }
 }

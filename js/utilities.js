@@ -62,22 +62,6 @@ function validateZipCode() {
     }
 }
 
-function validateEmail() {
-
-    const email = document.querySelector('#email');
-    if (email.value.length == 0) {
-        setTextValue('.email-error', '');
-        return false;
-    }
-    try {
-        checkEmail(email.value);
-        setTextValue('.email-error', '');
-        return true;
-    } catch (e) {
-        setTextValue('.email-error', e);
-    }
-}
-
 function checkName(name) {
 
     let nameRegex = RegExp('^[A-Z]{1}[A-Za-z\\s]{2,}$');
@@ -109,13 +93,6 @@ function checkZipCode(zip) {
     let zipRegex = RegExp('^[0-9]{3}\\s{0,1}[0-9]{3}$');
     if (!zipRegex.test(zip)) {
         throw 'Zip Code is incorrect';
-    } else return true;
-}
-
-function checkEmail(email) {
-    let emailRegex = RegExp('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+([\.][a-zA-Z]{2,})+(?:\.[a-zA-Z0-9-]+)*$');
-    if (!emailRegex.test(email)) {
-        throw 'Email is incorrect';
     } else return true;
 }
 
