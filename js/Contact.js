@@ -61,7 +61,7 @@ class Contact {
     }
 
     set phoneNumber(phoneNumber) {
-        let phoneNumberRegex = RegExp('^[0-9]{10}$');
+        let phoneNumberRegex = RegExp('^([\\+]?\\d{2})?[\\s]?\\d{10}$');
         if (phoneNumberRegex.test(phoneNumber))
             this._phoneNumber = phoneNumber;
         else throw 'Phone Number Is Incorrect';
