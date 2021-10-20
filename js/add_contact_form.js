@@ -33,10 +33,6 @@ function save(event) {
     }
 }
 
-function resetForm() {
-
-}
-
 function setContactObject() {
     contactObject = new Contact();
     try {
@@ -78,4 +74,8 @@ function createNewContactID() {
     let contactID = getListFromStorage('AddressBookList').length;
     contactID++;
     return contactID;
+}
+
+function resetForm() {
+
 }
