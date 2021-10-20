@@ -35,8 +35,12 @@ function createInnerHtml() {
                         <th>Phone Number</th>
                         <th>Actions</th>`;
     let addressBookData = AddressBookList;
-    if (addressBookData.length == 0) return;
-    let innerHtml = `${headerHtml}`;
+    let innerHtml = ``;
+    if (addressBookData.length == 0) {
+        document.querySelector('#display').innerHTML = innerHtml;
+        return;
+    }
+    innerHtml = `${headerHtml}`;
     for (const contact of addressBookData) {
         innerHtml += `
         <tr>
@@ -56,4 +60,18 @@ function createInnerHtml() {
         `;
     }
     document.querySelector('#display').innerHTML = innerHtml;
+}
+
+const remove = (node) => {
+    let addressBookData = AddressBookList.find(contact => contact.id == node.id);
+    if (!addressBookData) return;
+    const index = AddressBookList
+        .map(contact => contact.id)
+        .indexOf(addressBookData.id);
+    AddressBookList.splice(index, 1);
+    if (site_properties.useLocalStorage.match("true")) {
+        localStorage.setItem('AddressBookList', JSON.stringify(AddressBookList));
+        document.querySelector('.person-count').textContent = AddressBookList.length;
+        createInnerHtml();
+    }
 }
