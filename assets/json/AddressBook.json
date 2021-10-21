@@ -1,0 +1,11 @@
+{
+    "AddressBookList": [{
+        "id": 1,
+        "_address": "Play Arena",
+        "_city": "Bangalore",
+        "_fullName": "Front Man",
+        "_phoneNumber": "+91 9876543210",
+        "_state": "Karnataka",
+        "_zip": "560001"
+    }]
+}
