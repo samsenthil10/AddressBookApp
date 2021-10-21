@@ -34,26 +34,6 @@ function save(event) {
     }
 }
 
-function createOrUpdateAddressBook() {
-    let postURL = site_properties.server_url;
-    let methodCall = "POST";
-    if (isUpdate) {
-        methodCall = "PUT";
-        postURL = postURL + contactObject.id.toString();
-    }
-
-    console.log(methodCall, postURL)
-    makeServicecall(methodCall, postURL, true, contactObject)
-        .then(responseText => {
-            resetForm();
-            window.location.replace(site_properties.homepage);
-        })
-        .catch(error => {
-            throw error;
-        });
-}
-
-
 function setContactObject() {
 
     try {
@@ -131,4 +111,23 @@ function setForm() {
     setValue('#sts', contactObject._state);
     document.querySelector('#sts').onchange();
     setValue('#state', contactObject._city);
+}
+
+function createOrUpdateAddressBook() {
+    let postURL = site_properties.server_url;
+    let methodCall = "POST";
+    if (isUpdate) {
+        methodCall = "PUT";
+        postURL = postURL + contactObject.id.toString();
+    }
+
+    console.log(methodCall, postURL)
+    makeServicecall(methodCall, postURL, true, contactObject)
+        .then(responseText => {
+            resetForm();
+            window.location.replace(site_properties.homepage);
+        })
+        .catch(error => {
+            throw error;
+        });
 }
