@@ -17,6 +17,15 @@
       "_state": "Karnataka",
       "_zip": "560002",
       "id": 2
+    },
+    {
+      "_fullName": "Test User",
+      "_phoneNumber": "9999999999",
+      "_address": "Test Address",
+      "_city": " Bangalore Rural ",
+      "_state": "Karnataka",
+      "_zip": "555555",
+      "id": 3
     }
   ]
 }

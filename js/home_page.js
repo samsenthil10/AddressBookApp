@@ -88,6 +88,16 @@ const remove = (node) => {
         localStorage.setItem('AddressBookList', JSON.stringify(AddressBookList));
         document.querySelector('.person-count').textContent = AddressBookList.length;
         createInnerHtml();
+    } else {
+        const deleteUrl = site_properties.server_url + addressBookData.id.toString();
+        makeServicecall("DELETE", deleteUrl, true)
+            .then(responseText => {
+                document.querySelector('.person-count').textContent = AddressBookList.length;
+                createInnerHtml();
+            })
+            .catch(error => {
+                console.log("Delete Error Status: " + JSON.stringify(error));
+            });
     }
 }
 
