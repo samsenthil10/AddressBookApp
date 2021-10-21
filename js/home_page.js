@@ -3,6 +3,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     if (site_properties.useLocalStorage.match("true")) {
         EmployeePayrllDataList = getDataFromLocalStorage();
+    } else {
+        getDataFromServer();
     }
     var object = document.querySelectorAll(".homepage_href")
     for (var obj of object) {
@@ -18,6 +20,19 @@ function getDataFromLocalStorage() {
     AddressBookList = localStorage.getItem('AddressBookList') ?
         JSON.parse(localStorage.getItem('AddressBookList')) : [];
     processAddressBookDataResponse();
+}
+
+function getDataFromServer() {
+    makeServicecall("GET", site_properties.server_url, true)
+        .then(responseText => {
+            AddressBookList = JSON.parse(responseText);
+            processAddressBookDataResponse();
+        })
+        .catch(error => {
+            console.log("GET ERROR Status: " + error);
+            AddressBookList = [];
+            processAddressBookDataResponse();
+        })
 }
 
 function processAddressBookDataResponse() {

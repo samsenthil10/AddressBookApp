@@ -127,3 +127,8 @@ const setElementValues = (cls, value) => {
 const getListFromStorage = (key) => {
     return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
 }
+
+function showTime() {
+    const date = new Date();
+    return date.toLocaleTimeString();
+}
